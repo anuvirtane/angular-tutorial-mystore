@@ -2,9 +2,17 @@
 
 <section *ngFor="let product of products">
   <h3>
-    <!--title property bindingilla, näkyy leijuttaessa kursoria html-elementin päällä-->
+    <!--title property bindingilla, näkyy leijuttaessa kursoria html-elementin päällä joko noin:
     <a [title]="product.name + ' details'">
+      tai kuten alla:-->
+    <a title="{{ product.name + ' details' }}">
       {{ product.name }}
     </a>
-</h3>
+  </h3>
+
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <button (click)="share()">
+    Share
+  </button>
 </section>
