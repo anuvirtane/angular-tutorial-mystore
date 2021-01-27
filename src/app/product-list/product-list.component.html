@@ -1,0 +1,10 @@
+<h2>Products</h2>
+
+<section *ngFor="let product of products">
+  <h3>
+    <!--title property bindingilla, näkyy leijuttaessa kursoria html-elementin päällä-->
+    <a [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+</h3>
+</section>
