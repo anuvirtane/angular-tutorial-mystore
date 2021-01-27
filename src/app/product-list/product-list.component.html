@@ -1,11 +1,12 @@
 <h2>Products</h2>
 
-<section *ngFor="let product of products">
+<section *ngFor="let product of products; index as productId">
   <h3>
     <!--title property bindingilla, näkyy leijuttaessa kursoria html-elementin päällä joko noin:
     <a [title]="product.name + ' details'">
       tai kuten alla:-->
-    <a title="{{ product.name + ' details' }}">
+    <a title="{{ product.name + ' details' }}"
+    [routerLink]="['/products', productId]">
       {{ product.name }}
     </a>
   </h3>
